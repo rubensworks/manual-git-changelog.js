@@ -65,7 +65,8 @@
     "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.ts$",
     "moduleFileExtensions": [
       "ts",
-      "js"
+      "js",
+      "json"
     ],
     "collectCoverage": true,
     "testEnvironment": "node"

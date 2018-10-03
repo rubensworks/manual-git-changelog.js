@@ -31,7 +31,6 @@ ${title}
 
 ### TODO: categorize commits, choose titles from: Added, Changed, Deprecated, Removed, Fixed, Security.
 ${commits}
-
 `;
 }
 
@@ -51,5 +50,5 @@ export function insertIntoChangelog(changelogText: string, versionText: string):
     throw new Error(`Found no required empty line in CHANGELOG.md to append into.`);
   }
   return changelogText.substr(0, firstEmptyLineIndex + 2)
-    + versionText + changelogText.substr(firstEmptyLineIndex + 2);
+    + versionText + '\n' + changelogText.substr(firstEmptyLineIndex + 2);
 }
