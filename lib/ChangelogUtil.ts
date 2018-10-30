@@ -12,7 +12,7 @@ export function getVersion(packageJson: string): string {
 }
 
 export function getRepoUrl(packageJson: string): string {
-  const repoData = getPkgRepo(packageJson);
+  const repoData = getPkgRepo(JSON.parse(packageJson));
   return repoData.browse();
 }
 
