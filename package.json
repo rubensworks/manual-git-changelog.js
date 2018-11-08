@@ -79,7 +79,8 @@
     "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
     "build": "tsc",
     "validate": "npm ls",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "version": "./bin/cli.js onversion"
   },
   "dependencies": {
     "arrayify-stream": "^1.0.0",
