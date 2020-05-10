@@ -86,7 +86,7 @@
     "arrayify-stream": "^1.0.0",
     "get-pkg-repo": "^4.0.0",
     "git-raw-commits": "^2.0.0",
-    "git-semver-tags": "^3.0.0",
+    "git-semver-tags": "^4.0.0",
     "minimist": "^1.2.0"
   }
 }
