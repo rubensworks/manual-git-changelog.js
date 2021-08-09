@@ -1,6 +1,6 @@
 # Manual Git Changelog
 
-[![Build Status](https://travis-ci.org/rubensworks/manual-git-changelog.js.svg?branch=master)](https://travis-ci.org/rubensworks/manual-git-changelog.js)
+[![Build status](https://github.com/rubensworks/manual-git-changelog.js/workflows/CI/badge.svg)](https://github.com/rubensworks/manual-git-changelog.js/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/rubensworks/manual-git-changelog.js/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/manual-git-changelog.js?branch=master)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/rubensworks/manual-git-changelog.js/master)](https://stryker-mutator.github.io)
 [![npm version](https://badge.fury.io/js/manual-git-changelog.svg)](https://www.npmjs.com/package/manual-git-changelog)
