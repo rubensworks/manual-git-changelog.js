@@ -1,6 +1,6 @@
 {
   "name": "manual-git-changelog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple tool for appending to a changelog based on git commits and tags.",
   "keywords": [
     "changelog",
