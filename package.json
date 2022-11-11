@@ -85,7 +85,7 @@
     "version": "./bin/cli.js onversion"
   },
   "dependencies": {
-    "arrayify-stream": "^1.0.0",
+    "arrayify-stream": "^2.0.0",
     "get-pkg-repo": "^5.0.0",
     "git-raw-commits": "^2.0.0",
     "git-semver-tags": "^4.0.0",
