@@ -60,7 +60,7 @@ export function stageFile(file: string) {
       if (error) {
         return reject(error);
       }
-      resolve();
+      resolve(undefined);
     });
   });
 }
