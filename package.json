@@ -54,13 +54,16 @@
     "ts-jest": "^29.4.0",
     "tslint": "^6.0.0",
     "tslint-eslint-rules": "^5.3.1",
-    "typescript": "^5.0.0"
+    "typescript": "^6.0.0"
   },
   "jest": {
     "transform": {
-      "^.+\\.ts$": ["ts-jest", {
-        "tsconfig": "test/tsconfig.json"
-      }]
+      "^.+\\.ts$": [
+        "ts-jest",
+        {
+          "tsconfig": "test/tsconfig.json"
+        }
+      ]
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"

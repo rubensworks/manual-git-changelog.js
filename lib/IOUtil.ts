@@ -19,7 +19,7 @@ export async function getPackageJson(): Promise<string> {
   return await readFile('package.json', 'utf8');
 }
 
-export async function getLernaJson(): Promise<string> {
+export async function getLernaJson(): Promise<string | null> {
   try {
     return await readFile('lerna.json', 'utf8');
   } catch (e) {
@@ -32,13 +32,13 @@ export async function waitForUserInput(query: string) {
     input: process.stdin,
     output: process.stdout,
   });
-  return new Promise((resolve) => rl.question(query, (answer) => {
+  return new Promise((resolve) => rl.question(query, (answer: string) => {
     rl.close();
     resolve(answer);
   }));
 }
 
-export async function getLastGitVersionTag(): Promise<string> {
+export async function getLastGitVersionTag(): Promise<string | null> {
   const tags: string[] = await gitSemverTags();
   if (!tags.length) {
     // Initial release
@@ -49,14 +49,14 @@ export async function getLastGitVersionTag(): Promise<string> {
   }
 }
 
-export async function getGitCommits(previousVersion: string): Promise<string[]> {
+export async function getGitCommits(previousVersion?: string | null): Promise<string[]> {
   return (await arrayifyStream(gitRawCommits({ from: previousVersion, format: '%H-%s' })))
     .map((commit: Buffer) => commit.toString('utf8').replace('\n', ''));
 }
 
 export function stageFile(file: string) {
   return new Promise((resolve, reject) => {
-    execFile('git', ['add', file], (error) => {
+    execFile('git', ['add', file], (error: Error | null) => {
       if (error) {
         return reject(error);
       }
