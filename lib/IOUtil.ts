@@ -7,7 +7,7 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const gitSemverTags = promisify(require('git-semver-tags'));
 const gitRawCommits = require('git-raw-commits');
-const arrayifyStream = require('arrayify-stream');
+const arrayifyStream = require('arrayify-stream').arrayifyStream;
 
 export { readFile, writeFile };
 
