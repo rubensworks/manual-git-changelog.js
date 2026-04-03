@@ -7,7 +7,7 @@ import * as changelog from "../lib/ChangelogUtil";
 async function updateChangelog(init: boolean, previousVersion?: string, newVersion?: string) {
   // If no previous version if provided, define it via the git commits
   if (!previousVersion) {
-    previousVersion = await io.getLastGitVersionTag();
+    previousVersion = await io.getLastGitVersionTag() ?? undefined;
   }
 
   // If we were not able to find a previous version, throw an error (ignore if initializing the changelog)
@@ -20,7 +20,7 @@ did you already run 'manual-git-changelog init'?`);
   const date: string = io.getIsoDate();
   const packageJson: string = await io.getPackageJson();
   if (!newVersion) {
-    const lernaJson: string = await io.getLernaJson();
+    const lernaJson: string | null = await io.getLernaJson();
     newVersion = 'v' + changelog.getVersion(lernaJson || packageJson);
   }
   const repoUrl = changelog.getRepoUrl(packageJson);
@@ -80,7 +80,7 @@ case 'onversion':
   break;
 default:
   const versionRange = args._.length > 1;
-  updateChangelog(false, versionRange ? args._[0] : null, versionRange ? args._[1] : args._[0]);
+  updateChangelog(false, versionRange ? args._[0] : undefined, versionRange ? args._[1] : args._[0]);
   // Bump to version
   break;
 }

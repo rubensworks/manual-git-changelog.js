@@ -20,7 +20,7 @@ export function getCommitUrl(repoUrl: string, hash: string): string {
   return `${repoUrl}/commit/${hash}`;
 }
 
-export function getVersionTitle(newVersion: string, previousVersion: string, repoUrl: string, date: string): string {
+export function getVersionTitle(newVersion: string, previousVersion: string | null | undefined, repoUrl: string, date: string): string {
   return `## [${newVersion}]${previousVersion
     ? `(${repoUrl}/compare/${previousVersion}...${newVersion})` : ''} - ${date}`;
 }
@@ -40,7 +40,7 @@ export function formatCommits(commits: string[], repoUrl: string): string {
       const i = commit.indexOf('-');
       return [commit.substr(0, i), commit.substr(i + 1)];
     })
-    .map(([hash, title]: [string, string]) => `* [${title}](${getCommitUrl(repoUrl, hash)})`)
+    .map(([hash, title]) => `* [${title}](${getCommitUrl(repoUrl, hash)})`)
     .join('\n');
 }
 
